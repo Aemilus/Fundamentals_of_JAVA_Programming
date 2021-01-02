@@ -183,6 +183,7 @@ public class Person {
     private static String getTitle(String name) {
         Scanner sc = new Scanner(name);
         String firstName = sc.next();
+        sc.close();
 
         boolean isVowel = firstName.endsWith("a") || firstName.endsWith("e") || firstName.endsWith("i") || firstName.endsWith("o") || firstName.endsWith("u");
 

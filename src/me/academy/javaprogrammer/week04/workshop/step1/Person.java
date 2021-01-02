@@ -63,6 +63,8 @@ public class Person {
         String day = sc.next();
         String month = sc.next();
         String year = sc.next();
+        sc.close();
+
         return new Person(fullName, Integer.parseInt(year), Integer.parseInt(month), Integer.parseInt(day));
     }
 
@@ -75,6 +77,7 @@ public class Person {
         Scanner sc = new Scanner(name);
         String firstName = sc.next();
         String lastName = sc.next();
+        sc.close();
         if (firstName.isEmpty()) return false;
         if (lastName.isEmpty()) return false;
         return true;
@@ -99,6 +102,7 @@ public class Person {
     private static String getTitle(String name) {
         Scanner sc = new Scanner(name);
         String firstName = sc.next();
+        sc.close();
 
         boolean isVowel = firstName.endsWith("a") || firstName.endsWith("e") || firstName.endsWith("i") || firstName.endsWith("o") || firstName.endsWith("u");
 

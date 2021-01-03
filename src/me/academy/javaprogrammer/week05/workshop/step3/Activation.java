@@ -190,6 +190,13 @@ public class Activation {
     }
 
     public static void main(String[] args) {
+        // test coversCalendarDay()
+        LocalDateTime start = LocalDateTime.of(2021, 1, 4, 12, 0);
+        LocalDateTime end = start.plusHours(35).plusMinutes(59).plusSeconds(59);
+        Activation calendarActivation = new Activation(start, end);
+        System.out.println(calendarActivation);
+        System.out.println("coversCalendarDay: " + calendarActivation.coversCalendarDay());
+
         /**
          * In main method:
          *  * generate an random array of activations using generateRandomActivations

@@ -1,4 +1,4 @@
-package me.academy.javaprogrammer.week05.workshop.step1;
+package me.academy.javaprogrammer.week05.workshop.step2;
 
 import java.time.*;
 import java.time.format.DateTimeFormatter;
@@ -35,6 +35,18 @@ import java.util.Locale;
  *              + use format() method of LocalDateTime class
  *              + use Locale for Romania
  *              + use ofPattern() method of DateTimeFormatter class
+ *
+ * Step 2
+ * ------
+ * Improve toString() method and return also the duration of the activated session in days, hours, minutes and seconds.
+ * For achieving this then build a helper class ActivationUtils having static method:
+ *      String durationToDHMS(Duration d)
+ *  Note:
+ *  + Duration class has methods for returning the entire duration amount into days, hours, minutes and seconds;
+ *  + Because of above we will need to first get the amount of days then subtract it and then determine the rest of hours and so on;
+ *
+ *  Example of string returned:
+ *      "2 days, 15 hours, 6 minutes and 35 seconds"
  */
 public class Activation {
     private final LocalDateTime start;
@@ -54,17 +66,21 @@ public class Activation {
     }
 
     public String toString() {
+        // prepare Locale, DateTimeFormatter with pattern
         Locale ro = new Locale("ro", "RO");
         String roPattern = "EEEE dd MMMM yyyy 'ora' HH:mm:ss";
         DateTimeFormatter roTimeFormatter = DateTimeFormatter.ofPattern(roPattern, ro);
 
+        // prepare String representation of the session activation start and end times
         String startText = start.format(roTimeFormatter);
         String endText = end.format(roTimeFormatter);
+        String sessionText = "Sesiunea se activeaza incepand cu " + startText + " si se termina " + endText + ".";
 
-        return "Sesiunea se activeaza incepand cu " +
-                startText +
-                " si se termina " +
-                endText + ".";
+        // prepare String representation of duration between start and end time
+        Duration sessionDuration = Duration.between(start, end);
+        String durationText = "\nDurata: " + ActivationUtils.durationToDHMS(sessionDuration) + ".";
+
+        return sessionText + durationText;
     }
 
     public boolean overlaps(Activation s) {
@@ -87,8 +103,10 @@ public class Activation {
         if (start == null) return null;
         if (start.getDayOfWeek() == DayOfWeek.SUNDAY) return null;
         if (d == null) return null;
+
         // determine the end time
         LocalDateTime end = start.plus(d);
+
         // validate end
         if (!start.isBefore(end)) return null;
         if (end.getDayOfWeek() == DayOfWeek.SUNDAY) return null;

@@ -97,11 +97,13 @@ public class ActivationUtils {
                 Duration diffDuration = maxDuration.minus(minDuration);
                 Duration randomDuration = minDuration.plus(Duration.ofSeconds((int)(Math.random() * diffDuration.getSeconds() + 1)));
 
-                // if random start date plus random duration goes past maxDate then generate again
+                // if random start date plus random duration goes past maxDate then stop here and generate again
                 if (maxDateTime.isBefore(randomStart.plus(randomDuration))) continue;
 
                 // else we can generate an Activation object and save to array
                 out[i] = Activation.getInstance(randomStart, randomDuration);
+                // if the Activation object generated is null then stop here and generate again
+                if (out[i] == null) continue;
 
                 // if this random object overlaps previous activations then remove it from array
                 for (int j = 0; j < i; j++) {

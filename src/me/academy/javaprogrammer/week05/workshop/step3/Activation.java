@@ -190,37 +190,35 @@ public class Activation {
     }
 
     public static void main(String[] args) {
-        // testing the getInstance() methods
-        LocalDateTime testStartDateTime = LocalDateTime.of(2001, 12,31, 23, 59);
-        LocalDateTime testEndDateTime = LocalDateTime.of(2002, 1, 1, 1, 0);
-        Duration testDuration = Duration.ofHours(3);
-        int days = 1;
-        int hours = 2;
-        int mins = 30;
-        int secs = 300;
-        LocalDate startDate = LocalDate.now();
-        LocalTime startTime = LocalTime.now().minusHours(1);
-        LocalDate endDate = LocalDate.now();
-        LocalTime endTime = LocalTime.now().plusHours(2);
+        /**
+         * In main method:
+         *  * generate an random array of activations using generateRandomActivations
+         *  * array will hold 6 activations with duration between 1 hour to 3 days, all in current month period (00:00:00 first day of month to 23:59:59 last day of month)
+         *  * sort chronologically this activations
+         *  * print details of each activation in the array using toString() method
+         */
+        LocalDate minDate = LocalDate.of(Year.now().getValue(), YearMonth.now().getMonthValue(), 1);
+        LocalDate maxDate = minDate.plusMonths(1).minusDays(1);
+        Activation[] randomActivations = ActivationUtils.generateRandomActivations(6, Duration.ofHours(1), Duration.ofDays(3), minDate, maxDate);
+        System.out.println("Random activations:");
+        for (Activation r : randomActivations) {
+            System.out.println(r);
+        }
 
-        Activation s1 = getInstance(testStartDateTime, testEndDateTime);
-        System.out.println(s1.toString());
-        System.out.println("coversCalendarDay: " + s1.coversCalendarDay());
+        // bubble sort
+        for (int i = 0; i < randomActivations.length - 1; i++) {
+            for (int j = 0; j < randomActivations.length - i - 1; j++) {
+                if (randomActivations[j].getEnd().isAfter(randomActivations[j+1].getStart())) {
+                    Activation temp = randomActivations[j];
+                    randomActivations[j] = randomActivations[j+1];
+                    randomActivations[j+1] = temp;
+                }
+            }
+        }
 
-        Activation s2 = getInstance(testStartDateTime, testDuration);
-        System.out.println(s2.toString());
-        System.out.println("coversCalendarDay: " + s2.coversCalendarDay());
-
-        Activation s3 = getInstance(testStartDateTime, days, hours, mins, secs);
-        System.out.println(s3.toString());
-        System.out.println("coversCalendarDay: " + s3.coversCalendarDay());
-
-        Activation s4 = getInstance(startDate, startTime, endDate, endTime);
-        System.out.println(s4.toString());
-        System.out.println("coversCalendarDay: " + s4.coversCalendarDay());
-
-        // test overlaps
-        System.out.println(s1.overlaps(s2));
-        System.out.println(s1.overlaps(s4));
+        System.out.println("Random activations sorted:");
+        for (Activation r : randomActivations) {
+            System.out.println(r);
+        }
     }
 }

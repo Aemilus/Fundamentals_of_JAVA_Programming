@@ -136,7 +136,7 @@ public class Person {
         // build new person from input
         Person p = Person.getInstance(name, date);
 
-        // if input was invalid then Peron object is null
+        // if input was invalid then Person object is null
         if (p == null) {
             System.out.println("Invalid input!");
             System.exit(1);

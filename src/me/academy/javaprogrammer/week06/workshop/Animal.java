@@ -7,5 +7,9 @@ public abstract class Animal {
         this.name = name;
     }
 
-    abstract void feed();
+    public String getName() {
+        return name;
+    }
+
+    abstract public void feed();
 }

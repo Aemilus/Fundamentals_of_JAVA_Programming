@@ -3,4 +3,5 @@ Exercise 01
 - Extend the application by adding three ``JSlider``s to change color in RGB model.
 
 Snapshot with result of my implementation:
+
 ![Color Slider GUI Image](color_slider_gui.png)

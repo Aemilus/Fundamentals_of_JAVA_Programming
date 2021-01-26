@@ -7,4 +7,5 @@ Exercise 02
     - the look and feel used at startup of application must be selected by default in **Settings** menu
 
 Snapshot with result of my implementation:
+
 ![Color Slider GUI Image2](color_slider_gui.png)

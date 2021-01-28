@@ -1,4 +1,4 @@
-package me.academy.javaprogrammer.week03.workshop;
+package me.academy.javaprogrammer.week07.exercise03;
 
 import java.util.Arrays;
 
@@ -168,46 +168,15 @@ public class Radio {
         System.out.printf("Moved to previous channel: %s.\n", RADIO_STATIONS[currentRadioStation]);
     }
 
-    public static void main(String[] args) {
-        // i have a broken radio; if you uncomment below line the program throws an exception and terminates
-        // Radio myOldRadio = new Radio(-20);
+    public boolean isPoweredOn() {
+        return poweredOn;
+    }
 
-        // purchase a new radio
-        Radio myRadio = new Radio(100);
-        myRadio.status();
-        // test the errors displayed while trying to use the radio turned off
-        myRadio.increaseVolume();
-        myRadio.increaseVolume(50);
-        myRadio.decreaseVolume();
-        myRadio.decreaseVolume(50);
-        myRadio.nextRadioStation();
-        myRadio.previousRadioStation();
-        // turn on new radio
-        myRadio.turnOn();
-        myRadio.turnOn();
-        myRadio.status();
-        // increase volume
-        myRadio.increaseVolume();
-        myRadio.increaseVolume(50);
-        myRadio.increaseVolume(50);
-        myRadio.increaseVolume(50);
-        myRadio.status();
-        // next channels
-        for (int i = 0; i < 10; i++) {
-            myRadio.nextRadioStation();
-        }
-        // previous channels
-        for (int i = 0; i < 10; i++) {
-            myRadio.previousRadioStation();
-        }
-        // decrease volume
-        myRadio.decreaseVolume();
-        myRadio.decreaseVolume(50);
-        myRadio.decreaseVolume(50);
-        myRadio.decreaseVolume(50);
-        // turn it off
-        myRadio.turnOff();
-        myRadio.turnOff();
-        myRadio.status();
+    public String getCurrentRadioStation() {
+        return RADIO_STATIONS[currentRadioStation];
+    }
+
+    public int getVolume() {
+        return volume;
     }
 }

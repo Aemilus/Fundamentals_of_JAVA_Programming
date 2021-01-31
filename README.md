@@ -10,3 +10,4 @@ This repository is dedicated for working in-class and home exercises throughout 
 - [Week07](https://github.com/Aemilus/Fundamentals_of_JAVA_Programming/tree/master/src/me/academy/javaprogrammer/week07)
     - Graphical user interfaces. Java Swing - ``javax.swing`` package.
     - Inner classes. Anonymous inner classes. Local classes.
+- [Week08](https://github.com/Aemilus/Fundamentals_of_JAVA_Programming/tree/master/src/me/academy/javaprogrammer/week08) - Collections. Generics. Lambda expressions.

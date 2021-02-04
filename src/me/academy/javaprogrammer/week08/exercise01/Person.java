@@ -109,7 +109,7 @@ public class Person implements Comparable<Person> {
     // "native-sorting" -  see ActionListener for sortByNameRadioButton
     @Override
     public int compareTo(Person p) {
-        return getName().compareTo(p.getName());
+        return getName().compareToIgnoreCase(p.getName());
     }
 
     // to be used as method references - see ActionListener for sortByAgeRadioButton

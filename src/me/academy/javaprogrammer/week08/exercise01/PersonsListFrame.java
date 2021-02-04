@@ -4,6 +4,7 @@ import javax.swing.*;
 import java.awt.*;
 import java.util.ArrayList;
 import java.util.Collections;
+import java.util.Comparator;
 import java.util.List;
 
 public class PersonsListFrame extends JFrame {
@@ -35,6 +36,8 @@ public class PersonsListFrame extends JFrame {
     private final JCheckBox reverseSortingCheckBox = new JCheckBox("reverse");
 
     private final JPanel rootPanel = new JPanel();
+
+    private static final Comparator<Person> byAge = Person::sortByAge;
 
     public PersonsListFrame() {
         super("Persons List");
@@ -215,7 +218,7 @@ public class PersonsListFrame extends JFrame {
 
         sortByAgeRadioButton.addActionListener(e -> {
             if (!sortByAgeRadioButton.isSelected()) return;
-            personsList.sort(Person::sortByAge);
+            personsList.sort(byAge);
             if (reverseSortingCheckBox.isSelected()) {
                 Collections.reverse(personsList);
             }
@@ -232,7 +235,7 @@ public class PersonsListFrame extends JFrame {
 
     private Person parseInputPerson() {
         String gender = null;
-        if (maleRadioButton.isSelected()) gender = femaleRadioButton.getText();
+        if (maleRadioButton.isSelected()) gender = maleRadioButton.getText();
         if (femaleRadioButton.isSelected()) gender = femaleRadioButton.getText();
 
         return Person.getInstance(personNameTextField.getText(), (Integer) personAgeSpinner.getValue(), gender, marriedCheckBox.isSelected());

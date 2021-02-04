@@ -30,5 +30,6 @@ Requirements:
     - all `ActionListeners` are written with lambda expressions
     - show a message dialog when an exception occurs as result of invalid input `JOptionPane.showMessageDialog()`
     
+Result of current implementation:
 ![Persons List screenshot 1](persons_list_1.png)
 ![Persons List screenshot 2](persons_list_2.png)

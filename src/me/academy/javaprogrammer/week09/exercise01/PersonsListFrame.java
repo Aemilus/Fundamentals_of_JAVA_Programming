@@ -2,6 +2,8 @@ package me.academy.javaprogrammer.week09.exercise01;
 
 import javax.swing.*;
 import java.awt.*;
+import java.awt.event.MouseAdapter;
+import java.awt.event.MouseEvent;
 import java.util.*;
 import java.util.List;
 
@@ -270,6 +272,26 @@ public class PersonsListFrame extends JFrame {
             // set the model
             personsJList.setModel(personsListModel);
         });
+
+        personsJList.addMouseListener(new MouseAdapter() {
+            @Override
+            public void mouseClicked(MouseEvent e) {
+                // if no left click then do nothing
+                if (e.getButton() != MouseEvent.BUTTON1) return;
+                // if no double click then do nothing
+                if (e.getClickCount() != 2) return;
+                // if nothing selected in JList by click action then do nothing
+                if (personsJList.isSelectionEmpty()) return;
+
+                // load details of selected person on the person panel
+                Person p = personsJList.getSelectedValue();
+                personNameTextField.setText(p.getName());
+                personAgeModel.setValue(p.getAge());
+                if (p.getGender() == Gender.M) maleRadioButton.setSelected(true);
+                if (p.getGender() == Gender.F) femaleRadioButton.setSelected(true);
+                marriedCheckBox.setSelected(p.isMarried());
+            }
+        });
     }
 
     private String getSelectedGender() {
@@ -288,13 +310,17 @@ public class PersonsListFrame extends JFrame {
 
     private int parseInputDialog() {
         String input = JOptionPane.showInputDialog(this, "Enter size of list to be generated:", 10);
+        // if no input then close the application
+        if (input == null) System.exit(0);
+
         int size = 0;
         try {
             size = Integer.parseInt(input);
             if (size < 1) throw new IllegalArgumentException("parseInputDialog(): Size must be a positive integer.");
-        } catch (IllegalArgumentException e) {
+        } catch (IllegalArgumentException iae) {
             // this will catch also failure to parseInt as NumberFormatException is subclass of IllegalArgumentException
-            JOptionPane.showMessageDialog(this, e.getMessage());
+            JOptionPane.showMessageDialog(this, iae.getMessage(), "Warning", JOptionPane.WARNING_MESSAGE);
+            System.exit(-1);
         }
 
         return size;

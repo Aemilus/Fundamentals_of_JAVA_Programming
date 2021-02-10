@@ -19,18 +19,24 @@ public class PersonGenerator {
     }
 
     private static final String[] names = {
+            "Andrei",
+            "Andreea",
             "Joe",
             "John",
-            "Mary",
+            "Maria",
             "Simon",
             "Alicia",
             "David",
             "Leo",
+            "Alex",
+            "Alexa",
             "Colin",
             "Vasile",
             "Bogdan",
             "Catalin",
+            "Carmen",
             "Diana",
+            "Daniel",
             "Emil",
             "Florin",
             "Gheorghe",
@@ -45,8 +51,11 @@ public class PersonGenerator {
             "Oana",
             "Petru",
             "Pavel",
+            "Popescu",
             "Raul",
+            "Rodica",
             "Stefan",
+            "Sorin",
             "Tim",
             "Victor"
     };

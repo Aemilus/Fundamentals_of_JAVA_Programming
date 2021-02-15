@@ -9,10 +9,14 @@ Exercise 01
   - when user double clicks a `Person` in the `JList` the fields values are loaded on the `JPanel` where `Person` can be modified
   - on gui add a `JButton` called `Search`
   - add a `JTextField` where user can enter text for searching in the list if there are `Person`s having `name` field containing the search text; the search is launched on press of `Search` button; the search is case-insensitive and leading or trailing blanks are removed
-  - on `Clear` button press the `JTextField` is cleared and the `Jlist` is refreshed
+  - on `Clear` button press the `JTextField` is cleared and the `JList` is refreshed
     
 Result of current implementation:
 
 ![Input Dialog screenshot](persons_list_input_dialog.png)
+
 ![Persons List screenshot 1](persons_list_1.png)
+
 ![Persons List screenshot 2](persons_list_2.png)
+
+![Persons List screenshot 3](persons_list_3.png)

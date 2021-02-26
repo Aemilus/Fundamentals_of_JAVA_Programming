@@ -1,4 +1,4 @@
-Exercise 01
+Exercise 02
 
 - List all files with a given extension in a given directory and all it's subdirectories.
 

@@ -16,7 +16,7 @@ This repository is dedicated for working in-class and home exercises throughout 
 - [Week09](https://github.com/Aemilus/Fundamentals_of_JAVA_Programming/tree/master/src/me/academy/javaprogrammer/week09) - Streams. Exceptions.
 - [Week10](https://github.com/Aemilus/Fundamentals_of_JAVA_Programming/tree/master/src/me/academy/javaprogrammer/week10)
   - Reading and writing data to files:
-    - Working with ``java.io`` package
-    - Working with ``java.nio.file`` package
+    - Working with `java.io` package
+    - Working with `java.nio.file` package
   - Serialization
 

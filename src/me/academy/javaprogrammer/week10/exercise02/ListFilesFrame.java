@@ -1,4 +1,4 @@
-package me.academy.javaprogrammer.week10.exercise01;
+package me.academy.javaprogrammer.week10.exercise02;
 
 import javax.swing.*;
 import java.awt.*;

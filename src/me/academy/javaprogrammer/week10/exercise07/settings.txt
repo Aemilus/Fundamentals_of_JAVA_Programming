@@ -1,0 +1,7 @@
+buttonText=Click me!
+frameHeight=119
+frameTitle=What's my secret?
+frameWidth=356
+hiddenMessage=My secret is that I forget my secrets..
+locationX=636
+locationY=750

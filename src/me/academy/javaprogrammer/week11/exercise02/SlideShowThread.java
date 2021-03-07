@@ -24,18 +24,19 @@ public class SlideShowThread extends Thread {
 
     @Override
     synchronized public void run() {
+        statusLabel.setText(this.getName() + " has started.");
         while (true) {
             ImageIcon img = slides.get(index++);
             index %= slides.size();
             displayLabel.setIcon(img);
             try {
                 Thread.sleep(sleep);
-            } catch (InterruptedException e) {
+            } catch (InterruptedException sleepInterruptedException) {
                 try {
                     statusLabel.setText(this.getName() + " is pausing.");
                     this.wait();
                     statusLabel.setText(this.getName() + " is resuming.");
-                } catch (InterruptedException interruptedException) {
+                } catch (InterruptedException waitInterruptedException) {
                     statusLabel.setText(this.getName() + " pausing interrupted.");
                     continue;
                 }

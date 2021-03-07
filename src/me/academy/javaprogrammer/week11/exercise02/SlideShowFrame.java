@@ -61,6 +61,8 @@ public class SlideShowFrame extends JFrame {
             stopButton.setEnabled(true);
             if (slideShowThread != null) {
                 synchronized (slideShowThread) {
+                    // if below line is uncommented then waitInterruptedException is thrown
+                    // this causes slide-show thread to not resume from where was put on hold but to start from next loop iteration instead
 //                    slideShowThread.interrupt();
                     slideShowThread.notify();
                 }
@@ -74,6 +76,7 @@ public class SlideShowFrame extends JFrame {
         stopButton.setEnabled(false);
         stopButton.addActionListener(e -> {
             stopButton.setEnabled(false);
+            // sleepInterruptedException is thrown
             slideShowThread.interrupt();
             startButton.setEnabled(true);
         });

@@ -19,4 +19,4 @@ This repository is dedicated for working in-class and home exercises throughout 
     - Working with `java.io` package
     - Working with `java.nio.file` package
   - Serialization
-
+- [Week11](https://github.com/Aemilus/Fundamentals_of_JAVA_Programming/tree/master/src/me/academy/javaprogrammer/week11) - Multithreading

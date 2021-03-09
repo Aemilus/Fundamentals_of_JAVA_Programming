@@ -38,7 +38,7 @@ final class HorsePanel extends JPanel implements Runnable {
         // the horse has reached finish line
         horseProgressBar.setForeground(Color.BLUE);
         horseRacingFrame.incrementClosedThreads();
-        // if this is the last horse in the race and has reached finish line then
+        // if this is the last horse in the race and has reached finish line then Start race button is re-enabled
         if (horseRacingFrame.getCountClosedThreads() == horseRacingFrame.getRaceSize()) {
             horseRacingFrame.getStartRaceButton().setEnabled(true);
         }

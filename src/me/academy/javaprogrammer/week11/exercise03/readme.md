@@ -13,7 +13,7 @@ Requirements
     - it extends `JFrame`
     - has a constant field to record number of horses participating in the race
     - has a field with `List` of `HorsePanel`s 
-    - put each `HorsePanel`s in a `GridLayout` one below the other
+    - put each `HorsePanel` in a `GridLayout` one below the other
     - `JButton` to start the race
       - for duration of race `JButton` is disabled
       - when the race has ended `JButton` is re-enabled

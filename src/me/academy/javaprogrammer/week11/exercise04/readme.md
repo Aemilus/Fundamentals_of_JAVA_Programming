@@ -12,6 +12,7 @@ triggered during the race
 - try to build the application following Observer pattern
     
 Result of current implementation:
+
 ![horse race bet dialog](doc/horse_race_bet_dialog.png)
 
 ![horse race start](doc/horse_race_start.png)

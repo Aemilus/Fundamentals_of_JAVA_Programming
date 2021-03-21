@@ -14,7 +14,9 @@ Result of current implementation
 
 ![agenda app launch](doc/agenda_launch.png)
 
-![agenda submit button press](doc/agenda_dialog.png)
+![agenda add contact button press](doc/agenda_dialog.png)
+
+![agenda submit person](doc/agenda_submit.png)
 
 ![agenda content before delete](doc/agenda_before_delete.png)
 

@@ -13,10 +13,10 @@ Exercise 01
     
 Result of current implementation:
 
-![Input Dialog screenshot](persons_list_input_dialog.png)
+![Input Dialog screenshot](doc/persons_list_input_dialog.png)
 
-![Persons List screenshot 1](persons_list_1.png)
+![Persons List screenshot 1](doc/persons_list_1.png)
 
-![Persons List screenshot 2](persons_list_2.png)
+![Persons List screenshot 2](doc/persons_list_2.png)
 
-![Persons List screenshot 3](persons_list_3.png)
+![Persons List screenshot 3](doc/persons_list_3.png)

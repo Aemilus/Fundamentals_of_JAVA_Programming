@@ -7,6 +7,6 @@ Exercise 03
     
 Screenshot with result of my implementation:
 
-![Radio GUI off](radio-gui-off.png)
+![Radio GUI off](doc/radio-gui-off.png)
 
-![Radio GUI on](radio-gui-on.png)
+![Radio GUI on](doc/radio-gui-on.png)

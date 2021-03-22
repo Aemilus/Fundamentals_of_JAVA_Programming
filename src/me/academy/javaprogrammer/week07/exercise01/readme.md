@@ -4,4 +4,4 @@ Exercise 01
 
 Snapshot with result of my implementation:
 
-![Color Slider GUI Image](color_slider_gui.png)
+![Color Slider GUI Image](doc/color_slider_gui.png)

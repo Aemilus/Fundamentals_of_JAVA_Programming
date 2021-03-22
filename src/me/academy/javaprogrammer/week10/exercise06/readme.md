@@ -9,12 +9,12 @@ Requirements:
   
 Result of current implementation:
 
-![file menu](file_menu.png)
+![file menu](doc/file_menu.png)
 
-![save dialog](save_dialog.png)
+![save dialog](doc/save_dialog.png)
 
-![saved preferences in Win10 registry](registry_saved_preferences.png)
+![saved preferences in Win10 registry](doc/registry_saved_preferences.png)
 
-![open dialog](open_dialog.png)
+![open dialog](doc/open_dialog.png)
 
-![list of persons loaded from disk](load_list.png)
+![list of persons loaded from disk](doc/load_list.png)

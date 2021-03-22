@@ -11,6 +11,6 @@ Requirements:
 
 Result of current implementation:
 
-![Select BMP file screenshot](inspect_bmp_file_1.png)
+![Select BMP file screenshot](doc/inspect_bmp_file_1.png)
 
-![Dispaly BMP dimensions screenshot](inspect_bmp_file_2.png)
+![Dispaly BMP dimensions screenshot](doc/inspect_bmp_file_2.png)

@@ -5,8 +5,8 @@ For example: list all JPG files in users Picture directory.
   
 Result of current implementation:
 
-![List Files screenshot](list_files_1.png)
+![List Files screenshot](doc/list_files_1.png)
 
-![List Files screenshot](list_files_browse.png)
+![List Files screenshot](doc/list_files_browse.png)
 
-![List Files screenshot](list_files_2.png)
+![List Files screenshot](doc/list_files_2.png)

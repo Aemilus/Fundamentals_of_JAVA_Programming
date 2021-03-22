@@ -13,12 +13,12 @@ Requirements:
   
 Result of current implementation:
 
-![open dialog box to import settings](import_settings.png)
+![open dialog box to import settings](doc/import_settings.png)
 
-![default frame if no settings are imported](frame_with_no_settings_imported.png)
+![default frame if no settings are imported](doc/frame_with_no_settings_imported.png)
 
-![frame with settings imported from file](frame_with_settings_imported.png)
+![frame with settings imported from file](doc/frame_with_settings_imported.png)
 
-![save dialog box to export settings](export_settings.png)
+![save dialog box to export settings](doc/export_settings.png)
 
-![settings file](settings_file.png)
+![settings file](doc/settings_file.png)

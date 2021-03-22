@@ -11,6 +11,6 @@ Requirements:
 
 Result of current implementation:
 
-![List Files screenshot](list_pictures_1.png)
+![List Files screenshot](doc/list_pictures_1.png)
 
-![List Files screenshot](list_pictures_2.png)
+![List Files screenshot](doc/list_pictures_2.png)

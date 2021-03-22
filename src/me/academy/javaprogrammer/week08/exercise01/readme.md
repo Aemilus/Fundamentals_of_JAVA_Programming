@@ -32,5 +32,6 @@ Requirements:
     
 Result of current implementation:
 
-![Persons List screenshot 1](persons_list_1.png)
-![Persons List screenshot 2](persons_list_2.png)
+![Persons List screenshot 1](doc/persons_list_1.png)
+
+![Persons List screenshot 2](doc/persons_list_2.png)

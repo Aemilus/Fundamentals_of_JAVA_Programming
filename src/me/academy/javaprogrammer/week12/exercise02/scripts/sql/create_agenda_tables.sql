@@ -1,0 +1,13 @@
+USE agenda_db;
+
+CREATE TABLE person_t (
+	p_id TINYINT(2) UNSIGNED NOT NULL AUTO_INCREMENT,
+	p_name VARCHAR(40) NOT NULL,
+	p_age TINYINT(3) UNSIGNED NOT NULL,
+	p_gender ENUM('NA','M','F') NOT NULL,
+	p_married BOOLEAN DEFAULT 0,
+	PRIMARY KEY ( p_id )
+);
+
+DESCRIBE person_t;
+

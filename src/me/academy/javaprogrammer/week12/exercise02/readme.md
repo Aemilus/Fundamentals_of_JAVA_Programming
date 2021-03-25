@@ -22,4 +22,6 @@ Result of current implementation
 
 ![agenda frame table cell editor](doc/agenda_cell_editor.png)
 
+![agenda add contact dialog box](doc/agenda_add_contact_dialog_box.png)
+
 ![agenda database person table](doc/agenda_database_table.png)

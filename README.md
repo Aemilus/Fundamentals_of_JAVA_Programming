@@ -21,3 +21,4 @@ This repository is dedicated for working in-class and home exercises throughout 
   - Serialization
 - [Week11](https://github.com/Aemilus/Fundamentals_of_JAVA_Programming/tree/master/src/me/academy/javaprogrammer/week11) - Multithreading
 - [Week12](https://github.com/Aemilus/Fundamentals_of_JAVA_Programming/tree/master/src/me/academy/javaprogrammer/week12) - _JDBC_ Java Database Connectivity
+- [Final Project](https://github.com/Aemilus/Fundamentals_of_JAVA_Programming/tree/master/src/me/academy/javaprogrammer/finalproject)

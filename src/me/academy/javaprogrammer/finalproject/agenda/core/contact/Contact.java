@@ -12,32 +12,36 @@ import java.time.format.DateTimeParseException;
 import java.util.Objects;
 
 public final class Contact implements Serializable {
-    public static final String[] contactFields = new String[]{"First name", "Last name", "Birth date", "Phone number"};
+    public static final String[] CONTACT_FIELDS = new String[]{"First name", "Last name", "Birth date", "Phone number", "Mobile"};
     private static final DateTimeFormatter dateTimeFormatter = DateTimeFormatter.ofPattern("dd-MM-yyyy");
 
     private String firstName;
     private String lastName;
     private LocalDate birthDate;
     private PhoneNumber phoneNumber;
+    private boolean isMobilePhoneNumber;
 
-    public Contact(String firstName, String lastName, String birthDate, String phoneNumber) {
+    public Contact(String firstName, String lastName, String birthDate, String phoneNumber, boolean isMobilePhoneNumber) {
         setFirstName(firstName);
         setLastName(lastName);
         setBirthDate(birthDate);
-        setPhoneNumber(phoneNumber);
+        setPhoneNumber(phoneNumber, isMobilePhoneNumber);
     }
 
+    // very  important!!
+    // the equals for this class depends on correct implementation of equals in PhoneNumber class
+    // if you remove the equals from PhoneNumber class then below equals will give a false negative
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
         if (!(o instanceof Contact)) return false;
         Contact contact = (Contact) o;
-        return firstName.equals(contact.firstName) && lastName.equals(contact.lastName) && birthDate.equals(contact.birthDate);
+        return getFirstName().equals(contact.getFirstName()) && getLastName().equals(contact.getLastName()) && getBirthDate().equals(contact.getBirthDate()) && getPhoneNumber().equals(contact.getPhoneNumber());
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(birthDate);
+        return Objects.hash(getBirthDate());
     }
 
     private boolean isNameValid(String name) {
@@ -70,12 +74,6 @@ public final class Contact implements Serializable {
         return !LocalDate.now().isBefore(testLocalDate);
     }
 
-    private boolean isPhoneNumberValid(String phoneNumber) {
-        if (phoneNumber == null) return false;
-        if (phoneNumber.length() < 3) return false;
-        return true;
-    }
-
     public String getFirstName() {
         return firstName;
     }
@@ -98,6 +96,10 @@ public final class Contact implements Serializable {
 
     public PhoneNumber getPhoneNumber() {
         return phoneNumber;
+    }
+
+    public boolean isMobilePhoneNumber() {
+        return isMobilePhoneNumber;
     }
 
     public void setFirstName(String firstName) {
@@ -128,20 +130,12 @@ public final class Contact implements Serializable {
         }
     }
 
-    public void setPhoneNumber(String phoneNumber) {
-        if (!isPhoneNumberValid(phoneNumber)) {
-            throw new IllegalArgumentException("Invalid phone number.");
-        }
-        switch (phoneNumber.substring(0,2)) {
-            case "02":
-            case "03":
-                this.phoneNumber = new FixedPhoneNumber(phoneNumber);
-                break;
-            case "07":
-                this.phoneNumber = new MobilePhoneNumber(phoneNumber);
-                break;
-            default:
-                throw new IllegalArgumentException("Invalid phone number.");
+    public void setPhoneNumber(String phoneNumber, boolean isMobilePhoneNumber) {
+        this.isMobilePhoneNumber = isMobilePhoneNumber;
+        if (isMobilePhoneNumber) {
+            this.phoneNumber = new MobilePhoneNumber(phoneNumber);
+        } else {
+            this.phoneNumber = new FixedPhoneNumber(phoneNumber);
         }
     }
 }

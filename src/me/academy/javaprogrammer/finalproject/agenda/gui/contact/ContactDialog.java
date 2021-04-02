@@ -16,7 +16,7 @@ public abstract class ContactDialog extends JDialog {
 
     private void initDialog() {
         setLayout(new BorderLayout(10, 10));
-        setPreferredSize(new Dimension(300, 350));
+        setPreferredSize(new Dimension(300, 450));
         setResizable(false);
         add(contactPanel, BorderLayout.CENTER);
     }

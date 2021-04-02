@@ -3,6 +3,7 @@ package me.academy.javaprogrammer.finalproject.agenda.gui.contacts.table;
 import me.academy.javaprogrammer.finalproject.agenda.core.contacts.Contacts;
 import me.academy.javaprogrammer.finalproject.agenda.core.contact.Contact;
 
+import javax.swing.*;
 import javax.swing.event.TableModelListener;
 import javax.swing.table.TableModel;
 import java.util.ArrayList;
@@ -35,22 +36,23 @@ public final class ContactsTableModel implements TableModel {
 
     @Override
     public int getColumnCount() {
-        return Contact.contactFields.length;
+        return Contact.CONTACT_FIELDS.length;
     }
 
     @Override
     public String getColumnName(int columnIndex) {
-        return Contact.contactFields[columnIndex];
+        return Contact.CONTACT_FIELDS[columnIndex];
     }
 
     @Override
     public Class<?> getColumnClass(int columnIndex) {
+        if (columnIndex == 4) return Boolean.class;
         return String.class;
     }
 
     @Override
     public boolean isCellEditable(int rowIndex, int columnIndex) {
-        return true;
+        return columnIndex < 4;
     }
 
     @Override
@@ -65,6 +67,8 @@ public final class ContactsTableModel implements TableModel {
                 return contact.getBirthDateString();
             case 3:
                 return contact.getPhoneNumberString();
+            case 4:
+                return contact.isMobilePhoneNumber();
             default:
                 return null;
         }
@@ -74,19 +78,23 @@ public final class ContactsTableModel implements TableModel {
     public void setValueAt(Object aValue, int rowIndex, int columnIndex) {
         Contact contact = contactsModel.get(rowIndex);
         String sValue = (String) aValue;
-        switch (columnIndex) {
-            case 0:
-                contact.setFirstName(sValue);
-                break;
-            case 1:
-                contact.setLastName(sValue);
-                break;
-            case 2:
-                contact.setBirthDate(sValue);
-                break;
-            case 3:
-                contact.setPhoneNumber(sValue);
-                break;
+        try {
+            switch (columnIndex) {
+                case 0:
+                    contact.setFirstName(sValue);
+                    break;
+                case 1:
+                    contact.setLastName(sValue);
+                    break;
+                case 2:
+                    contact.setBirthDate(sValue);
+                    break;
+                case 3:
+                    contact.setPhoneNumber(sValue, contact.isMobilePhoneNumber());
+                    break;
+            }
+        } catch (Exception exception) {
+            JOptionPane.showMessageDialog(null, exception.getMessage(), "Error", JOptionPane.ERROR_MESSAGE);
         }
     }
 

@@ -25,14 +25,14 @@ public class AgendaSplashScreen extends JWindow implements Runnable {
 
     private void initWindow() {
         setLayout(new BorderLayout(10, 10));
-        setPreferredSize(new Dimension(500, 200));
+        setPreferredSize(new Dimension(500, 210));
         add(rootPanel, BorderLayout.CENTER);
         initLogoImagePanel();
     }
 
     private void initRootPanel() {
         loadingProgressBar.setStringPainted(true);
-        loadingProgressBar.setForeground(Color.RED);
+        loadingProgressBar.setForeground(Color.BLACK);
         loadingProgressBar.setBorder(BorderFactory.createLoweredSoftBevelBorder());
         rootPanel.setLayout(new BorderLayout(10, 10));
         rootPanel.setBorder(BorderFactory.createEmptyBorder(30, 0, 30, 30));

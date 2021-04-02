@@ -19,7 +19,8 @@ public final class AddContactDialog extends ContactDialog {
         String lastName = this.getContactPanel().getLastNameTextField().getText();
         String birthDate = this.getContactPanel().getBirthDateTextField().getText();
         String phoneNumber = this.getContactPanel().getPhoneNumberTextField().getText();
-        return new Contact(firstName, lastName, birthDate, phoneNumber);
+        boolean isMobilePhoneNumber = this.getContactPanel().getPhoneNumberTypeCheckBox().isSelected();
+        return new Contact(firstName, lastName, birthDate, phoneNumber, isMobilePhoneNumber);
     }
 
     @Override

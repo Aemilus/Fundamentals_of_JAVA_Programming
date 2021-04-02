@@ -1,7 +1,6 @@
 package me.academy.javaprogrammer.finalproject.agenda.core.filter;
 
 import me.academy.javaprogrammer.finalproject.agenda.core.contact.Contact;
-import me.academy.javaprogrammer.finalproject.agenda.core.filter.ContactFilter;
 import me.academy.javaprogrammer.finalproject.agenda.core.phone.MobilePhoneNumber;
 
 public final class MobilePhoneNumberContactFilter extends ContactFilter {

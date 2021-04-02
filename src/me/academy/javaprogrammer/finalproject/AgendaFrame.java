@@ -100,6 +100,12 @@ public final class AgendaFrame extends JFrame {
     }
 
     public static void main(String[] args) {
+        // set desired look and feel
+        try {
+            UIManager.setLookAndFeel("javax.swing.plaf.nimbus.NimbusLookAndFeel");
+        } catch (Exception exception) {
+            // if desired L&F is unavailable then do nothing
+        }
         // run splash screen on a separate thread
         AgendaSplashScreen agendaSplashScreen = new AgendaSplashScreen();
         Thread loadingThread = new Thread(agendaSplashScreen);

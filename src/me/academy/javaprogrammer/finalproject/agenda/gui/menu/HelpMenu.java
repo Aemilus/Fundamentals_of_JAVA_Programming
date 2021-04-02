@@ -27,7 +27,12 @@ public final class HelpMenu extends JMenu {
     private void initListeners() {
         registerMenuItem.addActionListener(event -> {
             // user is prompted to enter a registration code
-            String registrationCode = JOptionPane.showInputDialog(agendaFrame, "Enter registration code:", "Register", JOptionPane.INFORMATION_MESSAGE);
+            String registrationCode = JOptionPane.showInputDialog(
+                    agendaFrame,
+                    "Enter registration code:",
+                    "Register",
+                    JOptionPane.INFORMATION_MESSAGE
+            );
             // if user pressed cancel then do nothing
             if (registrationCode == null) return;
             // if code is invalid then do nothing
@@ -49,7 +54,12 @@ public final class HelpMenu extends JMenu {
         });
 
         aboutMenuItem.addActionListener(event -> {
-            JOptionPane.showConfirmDialog(agendaFrame, aboutPanel, "About", JOptionPane.DEFAULT_OPTION, JOptionPane.INFORMATION_MESSAGE);
+            JOptionPane.showConfirmDialog(
+                    agendaFrame, aboutPanel,
+                    "About",
+                    JOptionPane.DEFAULT_OPTION,
+                    JOptionPane.INFORMATION_MESSAGE
+            );
         });
     }
 }

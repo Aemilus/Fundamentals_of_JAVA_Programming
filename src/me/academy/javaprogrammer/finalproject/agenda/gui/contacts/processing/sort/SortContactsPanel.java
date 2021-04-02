@@ -12,10 +12,10 @@ public final class SortContactsPanel extends JPanel {
 
     private final JPanel sortingFieldsPanel = new JPanel();
     private final ButtonGroup sortingFieldsButtonGroup = new ButtonGroup();
-    private final JRadioButton sortByFirstNameRadioButton = new JRadioButton(Contact.contactFields[0]);
-    private final JRadioButton sortByLastNameRadioButton = new JRadioButton(Contact.contactFields[1]);
-    private final JRadioButton sortByBirthDateRadioButton = new JRadioButton(Contact.contactFields[2]);
-    private final JRadioButton sortByPhoneNumberRadioButton = new JRadioButton(Contact.contactFields[3]);
+    private final JRadioButton sortByFirstNameRadioButton = new JRadioButton(Contact.CONTACT_FIELDS[0]);
+    private final JRadioButton sortByLastNameRadioButton = new JRadioButton(Contact.CONTACT_FIELDS[1]);
+    private final JRadioButton sortByBirthDateRadioButton = new JRadioButton(Contact.CONTACT_FIELDS[2]);
+    private final JRadioButton sortByPhoneNumberRadioButton = new JRadioButton(Contact.CONTACT_FIELDS[3]);
     private final JButton sortContactsButton = new JButton("Sort");
 
     public SortContactsPanel() {

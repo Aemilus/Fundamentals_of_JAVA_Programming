@@ -1,16 +1,13 @@
 package me.academy.javaprogrammer.finalproject.agenda.core.phone;
 
 import java.io.Serializable;
+import java.util.Objects;
 
 public abstract class PhoneNumber implements Comparable<PhoneNumber>, Serializable {
     private String phoneNumber;
 
     public PhoneNumber(String phoneNumber) {
-        if (isPhoneNumberValid(phoneNumber)) {
-            this.phoneNumber = phoneNumber;
-        } else {
-            throw new IllegalArgumentException("Invalid phone number.");
-        }
+        setPhoneNumber(phoneNumber);
     }
 
     public final String getPhoneNumber() {
@@ -35,6 +32,22 @@ public abstract class PhoneNumber implements Comparable<PhoneNumber>, Serializab
     @Override
     public int compareTo(PhoneNumber otherPhoneNumber) {
         return this.phoneNumber.compareTo(otherPhoneNumber.getPhoneNumber());
+    }
+
+    // writing your equals method is extremely important here!!
+    // else your code will fail to identify equal PhoneNumber type objects
+    // in Contacts class the HashSet used to prevent duplicate contacts in the list will fail if equals would not be written
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (!(o instanceof PhoneNumber)) return false;
+        PhoneNumber that = (PhoneNumber) o;
+        return getPhoneNumber().equals(that.getPhoneNumber());
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(getPhoneNumber());
     }
 
     public abstract boolean isPhoneNumberValid(String phoneNumber);

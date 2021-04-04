@@ -15,12 +15,13 @@ public final class ManageContactPanel extends JPanel {
 
     public ManageContactPanel(AgendaFrame agendaFrame) {
         this.agendaFrame = agendaFrame;
-        setLayout(new FlowLayout(FlowLayout.CENTER, 10, 10));
-        initComponents();
+        initPanel();
         initListeners();
     }
 
-    private void initComponents() {
+    private void initPanel() {
+        setBorder(BorderFactory.createTitledBorder(""));
+        setLayout(new GridLayout(1, 3, 10, 10));
         add(addContactButton);
         add(deleteContactButton);
         add(editContactButton);
@@ -35,6 +36,16 @@ public final class ManageContactPanel extends JPanel {
         deleteContactButton.addActionListener(event -> {
             int selectedRow = agendaFrame.getContactsAdministrationPanel().getContactsTable().getSelectedRow();
             if (selectedRow < 0) return;
+            int option = JOptionPane.showConfirmDialog(
+                    agendaFrame,
+                    "Do you want to delete this contact?",
+                    "Delete",
+                    JOptionPane.YES_NO_OPTION,
+                    JOptionPane.WARNING_MESSAGE
+            );
+            // if user didn't confirm then do nothing
+            if (option > 0) return;
+            // else remove selected contact
             agendaFrame.getContactsAdministrationPanel().getContactsTableModel().deleteContact(selectedRow);
         });
 

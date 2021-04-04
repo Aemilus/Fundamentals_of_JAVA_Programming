@@ -137,7 +137,7 @@ public final class ContactsTableModel implements TableModel {
         this.contactComparator = contactComparator;
     }
 
-    public void setContacts(Contacts contacts) {
+    public synchronized void setContacts(Contacts contacts) {
         this.contacts = contacts;
         refreshModel();
     }

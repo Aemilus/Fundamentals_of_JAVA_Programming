@@ -17,7 +17,7 @@ public final class AgendaFrame extends JFrame {
     private static AgendaFrame _singletonAgendaFrame;
     // frame width and height
     public static final int FRAME_WIDTH = 600;
-    public static final int FRAME_HEIGHT = 800;
+    public static final int FRAME_HEIGHT = 900;
     // application starts in shareware mode
     boolean agendaFrameSharewareMode = true;
     // application menu bar

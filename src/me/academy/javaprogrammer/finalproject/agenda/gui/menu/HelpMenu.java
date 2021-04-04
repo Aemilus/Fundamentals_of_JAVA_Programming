@@ -6,6 +6,8 @@ import me.academy.javaprogrammer.finalproject.agenda.gui.slideshow.SlideShowPane
 import javax.swing.*;
 
 public final class HelpMenu extends JMenu {
+    private static final String REGISTRATION_CODE = "l3tm31n";
+
     private final AgendaFrame agendaFrame;
     private final AboutPanel aboutPanel = new AboutPanel();
 
@@ -36,8 +38,8 @@ public final class HelpMenu extends JMenu {
             // if user pressed cancel then do nothing
             if (registrationCode == null) return;
             // if code is invalid then do nothing
-            if (!registrationCode.equals("l3tm31n")) return;
-            // if valid then set the application to "full" mode in below 4 steps
+            if (!registrationCode.equals(REGISTRATION_CODE)) return;
+            // if valid then set the application to "full" mode in below 5 steps
             // 1. stop the commercials slide show thread
             SlideShowPanel slideShowPanel = agendaFrame.getSlideShowPanel();
             slideShowPanel.stopSlideShowThread();
@@ -49,7 +51,9 @@ public final class HelpMenu extends JMenu {
             agendaFrame.getRootPanel().remove(slideShowPanel);
             agendaFrame.pack();
             agendaFrame.repaint();
-            // 4. set shareware mode flag to false
+            // 4. registration menu item is disabled
+            registerMenuItem.setEnabled(false);
+            // 5. set shareware mode flag to false
             agendaFrame.setAgendaFrameSharewareMode(false);
         });
 

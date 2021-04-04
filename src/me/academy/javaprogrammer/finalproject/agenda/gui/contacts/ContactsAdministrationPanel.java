@@ -24,6 +24,7 @@ public class ContactsAdministrationPanel extends JPanel {
 
     public ContactsAdministrationPanel(AgendaFrame agendaFrame) {
         this.manageContactPanel = new ManageContactPanel(agendaFrame);
+        initComponents();
         initProcessingContactsPanel();
         initPanel();
     }
@@ -34,6 +35,10 @@ public class ContactsAdministrationPanel extends JPanel {
         add(processingContactsPanel, BorderLayout.NORTH);
         add(contactsTableScrollPane, BorderLayout.CENTER);
         add(manageContactPanel, BorderLayout.SOUTH);
+    }
+
+    private void initComponents() {
+        contactsTableScrollPane.setBorder(BorderFactory.createTitledBorder(""));
     }
 
     private void initProcessingContactsPanel() {
@@ -53,7 +58,7 @@ public class ContactsAdministrationPanel extends JPanel {
         return contacts;
     }
 
-    public void setContacts(Contacts contacts) {
+    public synchronized void setContacts(Contacts contacts) {
         this.contacts = contacts;
         contactsTableModel.setContacts(contacts);
     }

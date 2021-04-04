@@ -28,7 +28,7 @@ public final class SlideShowPanel extends JPanel implements Runnable {
     }
 
     private void initScreenLabel() {
-        slideDimension = new Dimension(AgendaFrame.FRAME_WIDTH, AgendaFrame.FRAME_HEIGHT / 2);
+        slideDimension = new Dimension(AgendaFrame.FRAME_WIDTH, AgendaFrame.FRAME_WIDTH * 2 / 3);
         screenLabel.setPreferredSize(slideDimension);
     }
 

@@ -11,7 +11,7 @@ public class ProcessingContactsPanel extends JPanel {
     private final SortContactsPanel sortContactsPanel = new SortContactsPanel();
 
     public ProcessingContactsPanel() {
-        setLayout(new BorderLayout(10, 10));
+        setLayout(new GridLayout(2, 1, 10, 10));
         add(filterContactsPanel, BorderLayout.NORTH);
         add(sortContactsPanel, BorderLayout.SOUTH);
     }
